@@ -7,6 +7,11 @@ class Agency(models.Model):
     registration_no = models.IntegerField()
     agency_logo = models.ImageField(default='default.jpg')
 
+    def __str__(self):
+        return self.agencyname
+
+    class Meta:
+        ordering = ['agencyname']
    
 
 class Agent(models.Model):

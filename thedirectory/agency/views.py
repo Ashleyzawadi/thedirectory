@@ -1,9 +1,17 @@
 from django.shortcuts import render
-# from django.http import HttpResponse
+from .models import Agency, Agent
+from django.shortcuts import get_object_or_404
+
 
 # Create your views here.
 def home(request):
-    return render(request, 'index.html')
+    all_agencies = Agency.objects.all()
+    context = {'all_agencies':all_agencies}  
+    return render(request, 'index.html', context)
 
-# def index(request):
-#     return HttpResponse("Hello, world. You're at the polls index.")
+def agency_detail(request, pk):
+    
+    agency = get_object_or_404(Agency,pk=pk)
+    
+    context = {'agency':agency},  
+    return (request, 'agency.html', context)
