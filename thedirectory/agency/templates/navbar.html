@@ -1,8 +1,8 @@
 <!--Navbar-->
-<nav class="navbar navbar-expand-lg  primary">
+<nav class="navbar navbar-expand-lg  primary-color">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="#">The Directory</a>
+  <a class="navbar-brand" href="{% url 'agency:index' %}">The Directory</a>
 
   <!-- Collapse button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -21,10 +21,10 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="{% url 'accounts:signup'%}">Sign Up</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link" href="{% url 'login'%}">Log In</a>
       </li>
 
       <!-- Dropdown -->

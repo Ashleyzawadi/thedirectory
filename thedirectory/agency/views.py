@@ -3,7 +3,7 @@ from .models import Agency, Agent
 from django.http import HttpResponse,Http404
 
 # Create your views here.
-def home(request):
+def index(request):
     all_agencies = Agency.objects.all()
     context = {'all_agencies':all_agencies}  
     return render(request, 'index.html', context)
