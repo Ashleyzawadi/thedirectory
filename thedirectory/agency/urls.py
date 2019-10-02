@@ -5,5 +5,5 @@ app_name = 'agency'
 
 urlpatterns = [
     path('', views.home, name = 'home'),
-    path('<int:pk>/',views.agency_detail, name = 'agency_detail' ),
+    path('<int:agency_id>/',views.agency_detail, name = 'agency_detail' ),
 ]

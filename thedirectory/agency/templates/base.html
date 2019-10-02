@@ -30,12 +30,14 @@
     {% endblock %}
 </head>
 <body>
-
+    {%include 'navbar.html'%}
+    
     <div class="container">
+            
         <div class="row">
-            <h1>The Directory</h1>
+            
             <div class="col-md-12">
-                {%include 'navbar.html'%}
+                
                 {% block content %}
                 {% endblock %}
             </div>
@@ -58,17 +60,9 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script>  
     <script type="text/javascript" src="js/mdb.min.js"></script>   
-    <script src="dist/slideout.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script>
-      var slideout = new Slideout({
-        'panel': document.getElementById('panel'),
-        'menu': document.getElementById('menu'),
-        'padding': 256,
-        'tolerance': 70
-      });
-    </script>
+
     {% endblock%}
 </body>
 </html>
