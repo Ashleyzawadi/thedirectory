@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 from .models import Agency, Agent
 from django.http import HttpResponse,Http404
-# from django.core.exceptions import DoesNotExist
+
 # Create your views here.
 def home(request):
     all_agencies = Agency.objects.all()
