@@ -13,3 +13,6 @@ def signup(request):
             
     return render(request, 'registration/signup.html', {'form':form})
 
+# def agencyadmin(request):
+#     if request.method == 'POST':
+#         form = 
