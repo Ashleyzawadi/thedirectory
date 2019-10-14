@@ -5,8 +5,8 @@ from django.http import HttpResponse,Http404
 # Create your views here.
 def index(request):
     all_agencies = Agency.objects.all()
-    context = {'all_agencies':all_agencies}  
-    return render(request, 'index.html', context)
+    # context = {'all_agencies':all_agencies}  
+    return render(request, 'index.html', locals())
 
 def agency_detail(request, agency_id):
 

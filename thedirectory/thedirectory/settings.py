@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 import dj_database_url
 import csv
+from decouple import config
 # from django.urls import reverse_lazy
 
 # ABSOLUTE_URL_OVERIDES = {
@@ -33,7 +34,9 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG=  config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = [‘* ‘]
+ALLOWED_HOSTS =['*']
+# ALLOWED_HOSTS='127.0.0.1,localhost,.herokuapp.com'
+# ALLOWED_HOSTS = config('ALLOWED_HOSTS')
 
 
 # Application definition
@@ -88,12 +91,21 @@ WSGI_APPLICATION = 'thedirectory.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'directore',
+        'USER': 'ashley',
+        'PASSWORD':'bezalel'
+    }
 }
-db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=config('DATABASE_URL')
+#     )
+# }
 
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
