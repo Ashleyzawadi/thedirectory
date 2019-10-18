@@ -12,7 +12,11 @@ class Agency(models.Model):
 
     class Meta:
         ordering = ['agencyname']
-   
+
+    @classmethod
+    def search_by_name(cls,search_term):
+        agency = cls.objects.filter(agenncyname__icontains=search_term)
+        return agency
 
 class Agent(models.Model):
     name = models.CharField(max_length = 100)

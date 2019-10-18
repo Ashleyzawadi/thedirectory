@@ -17,3 +17,13 @@ def agency_detail(request, agency_id):
         # context = {'agency':agency}
     return render(request, 'agencies/agency.html',{'agency':agency,})
 
+def search(request):
+    if 'agency' in request.GET and request.GET["agency"]:
+        search_term = request.GET.get('agency')
+        searched_agencies = Agency.search_by_name(search_term)
+        message = f'{ search_term}'
+        return render(request, 'search.html',{"message":message,"agencies":searched_agencies})
+    else:
+        message = 'We can\'t find any results ${message}'
+        return render(request, 'agencies/search.html', locals())
+
