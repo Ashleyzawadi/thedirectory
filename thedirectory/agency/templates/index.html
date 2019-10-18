@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+{% load static%}
+
+<h1>THE DIRECTORY</h1>
+{% block content%}
+<h5>Welcome  {% if user.is_authenticated%} {{user.username }} {% else %} visitor {% endif %}</h5>
+
+{% for agency in all_agencies %}
+
+    <!-- Card -->
+    <div class="col-md-4">
+            <div class="card">
+                <!-- Card image -->
+                    <div class="view overlay">
+                      <img class="card-img-top" src="{{agency.agency_logo.url}}" alt="Card image cap">
+                      <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                      </a>
+                    </div>
+                  
+                    <!-- Card content -->
+                    <div class="col-md-4">
+                        
+                    </div>
+                    <div class="card-body">
+                  
+                      <!-- Title -->
+                      <h4 class="card-title"> <a href="{{agency.id}}">{{agency.agencyname}}</a></h4>
+                      <!-- Text -->
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <!-- Button -->
+                      <a href="#" class="btn btn-primary">View Properties</a>
+                  
+                    </div>
+
+    </div>
+
+  
+  </div>
+  <!-- Card -->
+{% endfor%}
+
+{% endblock%}

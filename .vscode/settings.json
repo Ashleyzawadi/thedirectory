@@ -1,3 +1,7 @@
 {
+<<<<<<< HEAD
     "python.pythonPath": "/usr/bin/python3"
+=======
+    "python.pythonPath": "virtual/bin/python3.6"
+>>>>>>> 16b1e7fdd09c18aab1fda256bb84d0f835c6744d
 }
